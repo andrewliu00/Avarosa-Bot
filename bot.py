@@ -1,8 +1,14 @@
+import os
+
 import discord
 import random
 from discord.ext import commands
+from dotenv import load_dotenv
 from requests import get
 from bs4 import BeautifulSoup
+
+load_dotenv()
+token = os.getenv('DISCORD_TOKEN')
 
 client = commands.Bot(command_prefix='.')
 
@@ -125,4 +131,4 @@ async def mpchamp_error(ctx, error):
         raise error
 
 
-client.run('NjY3MTA2OTgwMTI4NzUxNjQ1.XiAkQw.TRTNyLJPTmk_fU1Oh47hc9Buhj8')
+client.run(token)
